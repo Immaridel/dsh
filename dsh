@@ -15,7 +15,7 @@ then
         echo -e ""
         echo -e "${LRED}Any groups displayed in this output are simply examples and could be outdated."
         echo -e ""
-        echo -e "${LYELLOW}$0${END} -o ${LYELLOW}aix${END}|${LYELLOW}linux${END} -g ${LYELLOW}prod${END}|${LYELLOW}cert${END}|${LYELLOW}trec${END} -c \"${LIME}command here${END}\"${END}"
+        echo -e "${LYELLOW}$0${END} -o ${LYELLOW}aix${END}|${LYELLOW}linux${END} -g ${LYELLOW}prod${END}|${LYELLOW}dev${END}|${LYELLOW}test${END} -c \"${LIME}command here${END}\"${END}"
         echo -e "${LCYAN}OR"
         echo -e "${LYELLOW}$0${END} -f ${LYELLOW}/path/to/host_list${END} -c \"${LIME}command here${END}\"${END}"
         echo -e ""
@@ -28,15 +28,13 @@ do
 case "$1" in
         -o) OS="$2"; shift 2;;
         -g) GROUP="$2"; shift 2;;
-        -f) FILE="$2"; shift 2;;
         -c) CMD="$2"; shift 2;;
         -d) DETAILS="true"; shift;;
 
         --os=*) os="{1#*=}"; shift 1;;
         --group=*) group="{1#*=}"; shift 1;;
-        --file=*) file="{1#*=}"; shift 1;;
         --command=*) command="{1#*=}"; shift 1;;
-        --os|--group|--file|--command|--details) echo "$1 requires an argument" >&2; exit 1;;
+        --os|--group|--command|--details) echo "$1 requires an argument" >&2; exit 1;;
 
         -*) echo "unknown option: $1" >&2; exit 1;;
         *) die "$1"; shift 1 ;;
@@ -66,11 +64,6 @@ fi
 if [[ -n $OS && -n $GROUP ]]
 then
         NODELOOP=$(awk '$3 = /,'${OS}',/ && $4 = /,'${GROUP}',/ && $4 !~ /,off,/ && $1 !~ /#/ {print $1}' ${HOSTLIST})
-fi
-
-if [[ -n $FILE ]]
-then
-        NODELOOP=$(/usr/bin/cat $FILE | awk '$1 !~ /#/ {print}')
 fi
 
 if [[ -n $DETAILS ]]

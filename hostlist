@@ -1,3 +1,5 @@
-#DNSName	Owner			OS					Groups								Description
-#--------	-----------		---------				-----------------------						---------------------
-cerbcl01	Unix			,all,rhel,				,test,								,SSH Client Test,
+#DNSName	Owner			OS				Groups					Description
+#--------	-----------		---------			-----------------------			---------------------
+cerbcl01	Unix			,all,rhel,			,test,					,SSH Client Test,
+cerbcl01	Unix			,all,ubuntu,			,dev,					,SSH Client Test,
+cerbcl01	Unix			,all,aix,			,prod,					,SSH Client Test,

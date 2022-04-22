@@ -27,14 +27,12 @@ do
 case "$1" in
         -o) OS="$2"; shift 2;;
         -g) GROUP="$2"; shift 2;;
-        -f) FILE="$2"; shift 2;;
         -s) SRC="$2"; shift 2;;
         -d) DEST="$2"; shift 2;;
         -t) DEST="$2"; shift 2;;
 
         --os=*) os="{1#*=}"; shift 1;;
         --group=*) group="{1#*=}"; shift 1;;
-        --file=*) file="{1#*=}"; shift 1;;
         --source=*) source="{1#*=}"; shift 1;;
         --dest=*) dest="{1#*=}"; shift 1;;
         --targ=*) dest="{1#*=}"; shift 1;;
@@ -99,11 +97,6 @@ do
         echo -e "${NODES}"
 done
 echo -e "${LIME}# No source/destination specified. Nodes in group listed instead. ${LRED}See below for more details: ${LIME}#${END}"
-fi
-
-if [[ -n $FILE ]]
-then
-        NODELOOP=$(/usr/bin/cat $FILE | awk '$1 !~ /#/ {print}')
 fi
 
 if [[ -z $SRC ]]
