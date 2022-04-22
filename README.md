@@ -3,7 +3,7 @@
 These tools were written to allow you to add hostnames from your environment into a file called "hostlist" and then add those clients to both a system group and an OS group, as desired.  As long as the file stays seperated into neatly defined colums, you'll be able to call combonations of those groups to deploy commands and files to groups of nodes, as you see fit.
   
 ## .dshrc file
-This file contains a number of variables that you can customize to your liking, should you desire.  The primary field to pay attention to in this file is the `HOSTLIST` variable, which needs to point towards your customized hostlist file on your system.
+This file should exist in your home directory (`~/.dshrc`) and contains a number of variables that you can customize to your liking, should you desire.  The primary field to pay attention to in this file is the `HOSTLIST` variable, which needs to point towards your customized hostlist file on your system.
 
 The `COL` variable defaults to 50 to help support terminals with restricted display sizes, such as AIX consoles and legacy terminal emulators, but can be changed as desired.
 
