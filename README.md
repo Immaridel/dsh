@@ -82,7 +82,7 @@ For best results, SSH keys should be set up from the issuing server to any clien
 
 ### Options
 ```
-Calling dsh without arguments will provide a short help guide with examples.
+Calling dcp without arguments will provide a short help guide with examples.
 
 -o      specify OS groups to be included in the command as defined in the hostlist file
         entering the word "groups" will provide a list of all OS and System Groups defined in the hostlist file
