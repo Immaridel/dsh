@@ -48,13 +48,11 @@ done
 if [[ $GROUP = "groups" ]]
 then
 awk '$4 !~ /,off,/ && $1 !~ /#/ {print $3,$4}' ${HOSTLIST} | sed 's!,!!' | sed 's!,! !g' | awk '{ for (i=1; i<=NF; i++) print $i }' | sort -u
-#awk '$4 !~ /,off,/ && $1 !~ /#/ {print $4}' ${HOSTLIST} | sed 's!,!!' | sed 's!,! !g' | awk '{ for (i=1; i<=NF; i++) print $i }' | sort -u
 fi
 
 if [[ $OS = "groups" ]]
 then
 awk '$4 !~ /,off,/ && $1 !~ /#/ {print $3,$4}' ${HOSTLIST} | sed 's!,!!' | sed 's!,! !g' | awk '{ for (i=1; i<=NF; i++) print $i }' | sort -u
-#awk '$4 !~ /,off,/ && $1 !~ /#/ {print $3}' ${HOSTLIST} | sed 's!,!!' | sed 's!,! !g' | awk '{ for (i=1; i<=NF; i++) print $i }' | sort -u
 fi
 
 if [[ -z $OS ]]
@@ -121,10 +119,6 @@ then
 fi
 
 echo ""
-#for NODES in $NODELOOP
-#do
-#echo -e "$(/usr/bin/scp -pr -o ConnectTimeout=3 $SRC $NODES:$DEST)         :${LIME}$NODES${END}"
-#done
 
 for NODES in $NODELOOP
 do
