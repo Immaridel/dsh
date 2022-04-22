@@ -12,4 +12,4 @@ YELLOW="\e[33m"
 LYELLOW="\e[93m"
 END="\e[m"
 
-HOSTLIST="/root/dsh/hostlist"
+HOSTLIST="/path/to/your/hostlist"
