@@ -90,9 +90,9 @@ Calling dsh without arguments will provide a short help guide with examples.
         entering the word "groups" will provide a list of all OS and System Groups defined in the hostlist file
 -s      Source file to be copied to the specified clients.  File can be in relative or absolute path, and can include
         environment variables local to the issuing host, such as $PWD, if desired.
--s      Destination file location for the specified clients.  File should be an absolute path, but can include 
+-d      Destination file location for the specified clients.  File should be an absolute path, but can include 
         environment variables local to the issuing host, such as $PWD, if desired.
--t      Target location for the client.  Exactly the same as -s
+-t      Target location for the client.  Exactly the same as -d
         This option exists at the request of a coworker who couldn't remember -d.  Thanks, Clay.
 ```
 
