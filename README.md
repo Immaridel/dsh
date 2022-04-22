@@ -32,11 +32,11 @@ HOSTLIST="/path/to/your/hostlist"
 Below is an example of a properly formatted hostlist file.  This file is simply named "hostlist" by default, but you can name it anything you like as long as the full path the file is correct specified in your .dshrc file in your home directory.
 
 ```  
-#DNSName        Owner                   OS                       System Groups                   Description
-#--------       -----------             ---------                -----------------------         ---------------------
-nodecl01        Linux Team              ,all,rhel,               ,test,                          ,SSH Test Client,
-nodecl02        Linux Team              ,all,ubuntu,             ,dev,                           ,SSH Test Client,
-nodecl02        Linux Team              ,all,aix,                ,prod,                          ,SSH Test Client,
+#DNSName        Owner                OS                System Groups           Description
+#--------       -----------          ---------         -------------           -----------------
+nodecl01        Linux Team           ,all,rhel,        ,test,                  ,SSH Test Client,
+nodecl02        Linux Team           ,all,ubuntu,      ,dev,                   ,SSH Test Client,
+nodecl02        Linux Team           ,all,aix,         ,prod,                  ,SSH Test Client,
 ```
 **Note:** You may either add a comment `#` to the beginning of a line or add the word `,off,` to either the OS or Groups column to prevent a client from being included in DSH or DCP calls, if desired.
 
